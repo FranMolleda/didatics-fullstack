@@ -13,12 +13,12 @@ const NewsSchema = mongoose.Schema({
   },
   content: {
     type: String,
-    required: true,
+    // required: true,
     trim: true,
   },
   author: {
     type: String,
-    required: true,
+    // required: true,
     trim: true,
   },
   date: {
