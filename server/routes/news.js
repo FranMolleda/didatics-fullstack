@@ -11,8 +11,8 @@ route.post(
   [
     check("title", "Title is required").not().isEmpty(),
     check("description", "Description is required").not().isEmpty(),
-    check("content", "Content is required").not().isEmpty(),
-    check("author", "Author is required").not().isEmpty(),
+    //   check("content", "Content is required").not().isEmpty(),
+    //   check("author", "Author is required").not().isEmpty(),
   ],
   newsCrud.postNews
 );

@@ -1,20 +1,21 @@
-const express = require("express")
-const dBConnect = require("./config/db")
-const app = express()
+const express = require("express");
+const dBConnect = require("./config/db");
+const cors = require("cors");
+const app = express();
 
-dBConnect()
+dBConnect();
 
-app.use(express.json({
-    extended: true
-}));
+app.use(cors());
 
-app.use("/news", require("./routes/news"))
-app.use("/", (req, res) => {
-    res.send("Hola desde back")
-})
-
+app.use(
+  express.json({
+    extended: true,
+  })
+);
 const port = process.env.PORT || 4000;
 
+app.use("/news", require("./routes/news"));
+
 app.listen(port, () => {
-    console.log(`Server is running in Port ${port}`);
+  console.log(`Server is running in Port ${port}`);
 });
